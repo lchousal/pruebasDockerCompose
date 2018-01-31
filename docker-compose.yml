@@ -1,0 +1,11 @@
+version: '1'
+
+services:
+  web:
+    build: ./web
+    ports:
+      - "80:5000"
+  lista:
+    build: ./lista-partitura
+    ports:
+      - "5000:5000"
