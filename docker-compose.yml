@@ -1,11 +1,18 @@
-version: '1'
+version: '3'
 
 services:
+  data:
+    build: ./datos
+    volumes:
+      - ./datos:/servicio/datos
   web:
     build: ./web
     ports:
-      - "80:5000"
-  lista:
-    build: ./lista-partitura
-    ports:
       - "5000:5000"
+    links:
+      - data
+    volumes:
+      - /tmp:/servicio/datos
+    
+volumes: 
+    data:

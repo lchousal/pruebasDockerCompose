@@ -1,13 +1,10 @@
 FROM python:alpine
 MAINTAINER Lucia Chousal Rodriguez
 
-RUN mkdir /servicio
-COPY servicio.py templates/
 WORKDIR /servicio
+COPY . /servicio
 
 RUN pip install -r requirements.txt
 
-EXPOSE 5000
-
 ENTRYPOINT ["python"]
-CMD ["servicio.py"]
+CMD ["dat.py"]

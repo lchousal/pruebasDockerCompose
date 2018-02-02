@@ -10,9 +10,5 @@ def getPartituras():
     pString = json.load(p)
     return jsonify(pString)
 
-@app.route('/status/')
-def estadoOk():
-    return jsonify({'status':'OK'})
-
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)

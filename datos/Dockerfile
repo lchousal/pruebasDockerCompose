@@ -1,7 +1,7 @@
-FROM alpine:3.5
+FROM busybox
 MAINTAINER Lucia Chousal Rodriguez
 
 WORKDIR /datos
 VOLUME /datos
 
-COPY datos.json
+COPY datos.json /datos
